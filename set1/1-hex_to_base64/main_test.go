@@ -105,34 +105,34 @@ func TestBinaryToBase64(t *testing.T) {
 
 }
 
-// func TestHexToBase64WithUtils(t *testing.T) {
-// 	inputs := []struct {
-// 		input          string
-// 		expectedOutput string
-// 	}{
-// 		{
-// 			input:          "49276d206b696c6c696e6720796f757220627261696e206c696b65206120706f69736f6e6f7573206d757368726f6f6d",
-// 			expectedOutput: "SSdtIGtpbGxpbmcgeW91ciBicmFpbiBsaWtlIGEgcG9pc29ub3VzIG11c2hyb29t",
-// 		},
-// 		{
-// 			input:          "1F4A",
-// 			expectedOutput: "H0o=",
-// 		},
-// 		{
-// 			input:          "B7E9",
-// 			expectedOutput: "t+k=",
-// 		},
-// 	}
+func TestHexToBase64WithUtils(t *testing.T) {
+	inputs := []struct {
+		input          string
+		expectedOutput string
+	}{
+		{
+			input:          "49276d206b696c6c696e6720796f757220627261696e206c696b65206120706f69736f6e6f7573206d757368726f6f6d",
+			expectedOutput: "SSdtIGtpbGxpbmcgeW91ciBicmFpbiBsaWtlIGEgcG9pc29ub3VzIG11c2hyb29t",
+		},
+		{
+			input:          "1F4A",
+			expectedOutput: "H0o=",
+		},
+		{
+			input:          "B7E9",
+			expectedOutput: "t+k=",
+		},
+	}
 
-// 	for _, item := range inputs {
-// 		binary, err := HexToBase64(item.input)
+	for _, item := range inputs {
+		binary, err := HexToBase64(item.input)
 
-// 		if err != nil {
-// 			t.Fatal("Error:", err)
-// 		}
+		if err != nil {
+			t.Fatal("Error:", err)
+		}
 
-// 		if binary != item.expectedOutput {
-// 			t.Errorf("Expected: %s, Got: %s", item.expectedOutput, binary)
-// 		}
-// 	}
-// }
+		if binary != item.expectedOutput {
+			t.Errorf("Expected: %s, Got: %s", item.expectedOutput, binary)
+		}
+	}
+}
